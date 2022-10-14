@@ -1,0 +1,7 @@
+{% extends "mysite:site/templates/base.jinja2" %}
+{% block title %}User Add{% endblock %}
+{% block content %}
+    <h1 style="color:Blue"> Add a JLA Member</h1>
+    <body background="https://www.guidingtech.com/wp-content/uploads/Justice-league-movie-wallpaper-11_4d470f76dc99e18ad75087b1b8410ea9.png">
+    <div class="col-md-6">{{ add_form | safe }}</div>
+{% endblock %}

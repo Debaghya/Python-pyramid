@@ -1,0 +1,43 @@
+{% extends "mysite:site/templates/base.jinja2" %}
+{% block title %}Users List{% endblock %}
+{% block content %}
+ <body background="https://wallpapers.com/images/hd/justice-league-comics-fanart-5qbxroxkicjyforu.jpg">
+  {% if msg %}
+      <div class="alert alert-info">
+        {{ msg }}
+      </div>
+  {% endif %}
+
+    <a class="btn btn-primary pull-right"
+       href="{{ request.route_url('users_add') }}">Add</a>
+    <h1 style="color:Cyan">Superheroes - List <img src="static/icon.jpg" alt="icon" width =100px height=70px></h1>
+
+
+    <ul class="list-group col-md-6">
+      {% for user in users %}
+            <li class="list-group-item">
+
+                <a href="{{ request.route_url('users_view', id=user.id) }}">
+                  {{ user.last_name }},
+                  {{ user.first_name }}
+                </a>
+
+                  <div class="btn-group  pull-right" role="group">
+                      <a class="btn btn-default btn-xs"
+                         href="{{ request.route_url('users_edit', id=user.id) }}">
+                      <span class="glyphicon glyphicon-pencil"
+                            aria-hidden="true"></span> edit
+                      </a>
+                      <a class="btn btn-default btn-xs"
+                         href="{{ request.route_url('users_delete', id=user.id) }}">
+                      <span class="glyphicon glyphicon-trash"
+                            aria-hidden="true"></span> delete
+                      </a>
+                  </div>
+
+            </li>
+      {% endfor %}
+    </ul>
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "mysite:site/templates/base.jinja2" %}
+{% block title %}User Edit {% endblock %}
+{% block content %}
+     <body background="https://images8.alphacoders.com/547/547206.jpg">
+    <h1 style="color:Red"><strong>Hero- Edit  </strong><em>{{ context.id }}</em></h1>
+
+    <div class="col-md-6">{{ edit_form | safe }}</div>
+
+{% endblock %}
